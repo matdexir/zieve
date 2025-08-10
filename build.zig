@@ -32,7 +32,7 @@ fn setupLibrary(b: *std.Build, target: std.Build.ResolvedTarget, optimize: std.b
 
 fn setupExamples(b: *std.Build, target: std.Build.ResolvedTarget, optimize: std.builtin.OptimizeMode) void {
     const example_step = b.step("bench", "Build benchmarks");
-    const example_names = [_][]const u8{"bench"};
+    const example_names = [_][]const u8{ "bench", "put" };
 
     for (example_names) |example_name| {
         const example = b.addExecutable(.{
